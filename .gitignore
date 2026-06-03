@@ -1,0 +1,7 @@
+# Root index.html is generated on demand by make
+/index.html
+
+# Default output of make install
+build/
+# nix result
+result

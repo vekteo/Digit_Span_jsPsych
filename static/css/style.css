@@ -1,43 +1,195 @@
 p {
-    font-size: 1.25em;
+  font-size: 1.25em;
 }
 
 img {
-    width: 30rem;
+  width: 30rem;
 }
 
 body {
-    background-color: light-gray
+  background-color: light-gray;
 }
+
+
+/* start dp*/
+.digit-btn {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border: 1px solid #d9d9d9;
+    box-sizing: border-box;
+    font-size: 2em;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.digit-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 56px);
+    gap:8px;
+    justify-content:center;
+    margin-top: 10px;
+    margin-bottom: 20px
+}
+
+#backspace-btn {
+    grid-column: 2;
+    justify-self: center;
+}
+#answer-display{
+    font-size: 3em;
+    font-weight: bold;
+}
+
+
+/* end dp*/
+
+
+div.input {
+  width:100%;
+  display: flex;
+  justify-content: center;
+}
+
+div.keypad {
+  padding: 1ch 1ch 1ch 1ch;
+  display: grid;
+  gap: 0.5ch;
+  grid-template-columns: 3em 3em 3em;
+}
+
+/*input[type="button"] {*/
+/*  font-size: 1.5em;*/
+/*}*/
 
 #stimulus {
-    font-size: 100px
+  font-size: 100px;
 }
 
+#stimulus.treatment-red-numbers {
+  color: #a70102; /* A red with good contrast */
+}
+
+#stimulus.treatment-even-odd.digit-1,
+#stimulus.treatment-even-odd.digit-3,
+#stimulus.treatment-even-odd.digit-5,
+#stimulus.treatment-even-odd.digit-7,
+#stimulus.treatment-even-odd.digit-9 {
+  color: oklch(from #a70102 l c calc(h + 0 * 180));
+}
+
+#stimulus.treatment-even-odd.digit-2,
+#stimulus.treatment-even-odd.digit-4,
+#stimulus.treatment-even-odd.digit-6,
+#stimulus.treatment-even-odd.digit-8 {
+  color: oklch(from #a70102 l c calc(h + 1 * 180));
+}
+
+/* Rotate each color by 40 degrees to keep a consistent contrast/lightness */
+.treatment-colored-keys .digit-btn.digit-1,
+.treatment-colored-keys .answer-digit.digit-1,
+input.treatment-colored-keys.digit-1,
+#stimulus.treatment-colored-keys.digit-1,
+#stimulus.treatment-colored-numbers.digit-1 {
+  color: oklch(from #a70102 l c calc(h + 0 * 40));
+}
+.treatment-colored-keys .digit-btn.digit-2,
+.treatment-colored-keys .answer-digit.digit-2,
+input.treatment-colored-keys.digit-2,
+#stimulus.treatment-colored-keys.digit-2,
+#stimulus.treatment-colored-numbers.digit-2 {
+  color: oklch(from #a70102 l c calc(h + 1 * 40));
+}
+.treatment-colored-keys .digit-btn.digit-3,
+.treatment-colored-keys .answer-digit.digit-3,
+input.treatment-colored-keys.digit-3,
+#stimulus.treatment-colored-keys.digit-3,
+#stimulus.treatment-colored-numbers.digit-3 {
+  color: oklch(from #a70102 l c calc(h + 2 * 40));
+}
+.treatment-colored-keys .digit-btn.digit-4,
+.treatment-colored-keys .answer-digit.digit-4,
+input.treatment-colored-keys.digit-4,
+#stimulus.treatment-colored-keys.digit-4,
+#stimulus.treatment-colored-numbers.digit-4 {
+  color: oklch(from #a70102 l c calc(h + 3 * 40));
+}
+.treatment-colored-keys .digit-btn.digit-5,
+.treatment-colored-keys .answer-digit.digit-5,
+input.treatment-colored-keys.digit-5,
+#stimulus.treatment-colored-keys.digit-5,
+#stimulus.treatment-colored-numbers.digit-5 {
+  color: oklch(from #a70102 l c calc(h + 4 * 40));
+}
+.treatment-colored-keys .digit-btn.digit-6,
+.treatment-colored-keys .answer-digit.digit-6,
+input.treatment-colored-keys.digit-6,
+#stimulus.treatment-colored-keys.digit-6,
+#stimulus.treatment-colored-numbers.digit-6 {
+  color: oklch(from #a70102 l c calc(h + 5 * 40));
+}
+.treatment-colored-keys .digit-btn.digit-7,
+.treatment-colored-keys .answer-digit.digit-7,
+input.treatment-colored-keys.digit-7,
+#stimulus.treatment-colored-keys.digit-7,
+#stimulus.treatment-colored-numbers.digit-7 {
+  color: oklch(from #a70102 l c calc(h + 6 * 40));
+}
+.treatment-colored-keys .digit-btn.digit-8,
+.treatment-colored-keys .answer-digit.digit-8,
+input.treatment-colored-keys.digit-8,
+#stimulus.treatment-colored-keys.digit-8,
+#stimulus.treatment-colored-numbers.digit-8 {
+  color: oklch(from #a70102 l c calc(h + 7 * 40));
+}
+.treatment-colored-keys .digit-btn.digit-9,
+.treatment-colored-keys .answer-digit.digit-9,
+input.treatment-colored-keys.digit-9,
+#stimulus.treatment-colored-keys.digit-9,
+#stimulus.treatment-colored-numbers.digit-9 {
+  color: oklch(from #a70102 l c calc(h + 8 * 40));
+}
+
+/* more vibrant/higher-contrast color list */
+/*.fullColor[data-digit="1"], .fullColor [data-digit="1"] { color: #ff0000; }*/
+/*.fullColor[data-digit="2"], .fullColor [data-digit="2"] { color: #ff7f00; }*/
+/*.fullColor[data-digit="3"], .fullColor [data-digit="3"] { color: #ffd700; }*/
+/*.fullColor[data-digit="4"], .fullColor [data-digit="4"] { color: #7fff00; }*/
+/*.fullColor[data-digit="5"], .fullColor [data-digit="5"] { color: #00b050; }*/
+/*.fullColor[data-digit="6"], .fullColor [data-digit="6"] { color: #00bcd4; }*/
+/*.fullColor[data-digit="7"], .fullColor [data-digit="7"] { color: #0070f3; }*/
+/*.fullColor[data-digit="8"], .fullColor [data-digit="8"] { color: #4b0082; }*/
+/*.fullColor[data-digit="9"], .fullColor [data-digit="9"] { color: #8b00ff; }*/
+
+
 .correct {
-    color: green
+  color: green;
 }
 
 .wrong {
-    color: red
+  color: red;
 }
 
 .formDiv {
-    text-align: center;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #startDiv {
-    text-align: center;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.warning{
-    margin-top: 10%;
+.warning {
+  margin-top: 10%;
 }
